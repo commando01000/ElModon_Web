@@ -197,11 +197,6 @@ select {
         padding: 0 10px;
     }
 }
-@media (min-width: 991.98px) {
-    main {
-        padding-left: 240px;
-    }
-}
 
 /* Sidebar */
 .sidebar {
@@ -219,11 +214,12 @@ select {
     .sidebar {
         width: 100%;
     }
-}
-@media (max-width: 600px) {
     .navbar-nav {
         justify-content: center !important;
         align-items: center !important;
+    }
+    .main {
+        padding-left: 240px;
     }
 }
 .sidebar .active {
