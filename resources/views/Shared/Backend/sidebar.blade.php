@@ -1,55 +1,33 @@
-
-@section('content')
 <!-- Sidebar -->
 <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
     <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-4">
-            <!-- Collapse 1 -->
-            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true" data-mdb-collapse-init
-                href="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1">
-                <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Expanded menu</span>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
             </a>
-            <!-- Collapsed content -->
-            <ul id="collapseExample1" class="collapse show list-group list-group-flush">
-                <li class="list-group-item py-1">
-                    <a href="#" class="text-reset">Link</a>
-                </li>
-                <li class="list-group-item py-1">
-                    <a href="#" class="text-reset">Link</a>
-                </li>
-                <li class="list-group-item py-1">
-                    <a href="#" class="text-reset">Link</a>
-                </li>
-                <li class="list-group-item py-1">
-                    <a href="#" class="text-reset">Link</a>
-                </li>
-            </ul>
-            <!-- Collapse 1 -->
-
-            <!-- Collapse 2 -->
-            <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true" data-mdb-collapse-init
-                href="#collapseExample2" aria-expanded="true" aria-controls="collapseExample2">
-                <i class="fas fa-chart-area fa-fw me-3"></i><span>Collapsed menu</span>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+                <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span>
             </a>
-            <!-- Collapsed content -->
-            <ul id="collapseExample2" class="collapse list-group list-group-flush">
-                <li class="list-group-item py-1">
-                    <a href="#" class="text-reset">Link</a>
-                </li>
-                <li class="list-group-item py-1">
-                    <a href="#" class="text-reset">Link</a>
-                </li>
-                <li class="list-group-item py-1">
-                    <a href="#" class="text-reset">Link</a>
-                </li>
-                <li class="list-group-item py-1">
-                    <a href="#" class="text-reset">Link</a>
-                </li>
-            </ul>
-            <!-- Collapse 2 -->
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                    class="fas fa-lock fa-fw me-3"></i><span>Password</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                    class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                    class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                    class="fas fa-globe fa-fw me-3"></i><span>International</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                    class="fas fa-building fa-fw me-3"></i><span>Partners</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                    class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                    class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                    class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a>
         </div>
     </div>
 </nav>
 <!-- Sidebar -->
-
-@endsection

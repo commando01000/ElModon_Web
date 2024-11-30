@@ -9,7 +9,7 @@ class AdminController extends Controller
     //
     public function index()
     {
-        return view('Shared/Backend/layout');
+        return view('Backend/dashboard/index');
     }
 
 }
