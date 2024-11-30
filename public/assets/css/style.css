@@ -222,6 +222,12 @@ select {
         padding-left: 240px;
     }
 }
+@media (max-width: 600px) {
+    .navbar-nav {
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
 .sidebar .active {
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);

@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,14 +27,18 @@ Route::middleware(['auth:admin'])->group(function () {
 Route::middleware('auth')->get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
-    Route::post('admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
+// Route::middleware('auth')->group(function () {
+//     Route::get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
+//     Route::post('admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
 
-});
+// });
 
 
 Route::prefix('admin')->group(function () {
+
+    Route::get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
+    Route::post('admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
+
     // Show login form
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
 
@@ -52,9 +59,17 @@ Route::prefix('admin')->group(function () {
 
     // Route to handle the form submission
     Route::post('settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
-
 });
 
 Route::get('/', function () {
     return view('Frontend.Home.Index');
 });
+
+Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
+
+// Lang routes
+Route::get('/lang/{locale}', function ($locale) {
+    App::setLocale($locale);
+    Session::put('locale', $locale);
+    return redirect()->back();
+})->name('lang');
