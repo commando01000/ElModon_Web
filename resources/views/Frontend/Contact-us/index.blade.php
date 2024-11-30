@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Contact Form</title>
+@extends('Frontend.Shared.layout')
+@section('title', 'send message')
+@section('css')
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212; /* Dark background */
+            background-color: #121212;
+            /* Dark background */
             color: #fff;
             margin: 0;
             padding: 0;
@@ -21,7 +19,8 @@
             max-width: 700px;
             width: 100%;
             padding: 20px;
-            background-color: #1f1f1f; /* Slightly lighter background */
+            background-color: #1f1f1f;
+            /* Slightly lighter background */
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
@@ -37,7 +36,10 @@
             display: flex;
             gap: 20px;
             margin-bottom: 20px;
+            margin-top: 20px;
+            /* Added margin-top */
         }
+
 
         .form-column {
             flex: 1;
@@ -63,7 +65,8 @@
 
         .form-group input:focus,
         .form-group textarea:focus {
-            border-color: #ff5722; /* Highlight color */
+            border-color: #ff5722;
+            /* Highlight color */
         }
 
         .form-group textarea {
@@ -82,15 +85,15 @@
             font-size: 0.9em;
         }
 
-        .form-group input:focus + span,
-        .form-group textarea:focus + span {
+        .form-group input:focus+span,
+        .form-group textarea:focus+span {
             top: -15px;
             font-size: 0.8em;
             color: #ff5722;
         }
 
-        .form-group input:not(:placeholder-shown) + span,
-        .form-group textarea:not(:placeholder-shown) + span {
+        .form-group input:not(:placeholder-shown)+span,
+        .form-group textarea:not(:placeholder-shown)+span {
             top: -15px;
             font-size: 0.8em;
             color: #ff5722;
@@ -123,9 +126,11 @@
             background-color: #e64a19;
         }
     </style>
-</head>
-<body>
+@endsection
 
+
+
+@section('content')
     <div class="contact-form">
         <h2>Contact Us</h2>
         <form action="/send-message" method="POST">
@@ -134,13 +139,13 @@
                 <div class="form-column">
                     <div class="form-group">
                         <input type="text" id="full_name" name="full_name" placeholder=" " required>
-                        <span>Full Name <span class="required">*</span></span>
+                        <span>Full Name <span class="required"></span></span>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-group">
                         <input type="tel" id="phone" name="phone" placeholder=" " required>
-                        <span>Phone Number <span class="required">*</span></span>
+                        <span>Phone Number <span class="required"></span></span>
                     </div>
                 </div>
             </div>
@@ -150,13 +155,13 @@
                 <div class="form-column">
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder=" " required>
-                        <span>Email <span class="required">*</span></span>
+                        <span>Email <span class="required"></span></span>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-group">
                         <input type="text" id="subject" name="subject" placeholder=" " required>
-                        <span>Subject <span class="required">*</span></span>
+                        <span>Subject <span class="required"></span></span>
                     </div>
                 </div>
             </div>
@@ -164,7 +169,7 @@
             <!-- Message -->
             <div class="form-group">
                 <textarea id="message" name="message" placeholder=" " required></textarea>
-                <span>Message <span class="required">*</span></span>
+                <span>Message <span class="required"></span></span>
             </div>
 
             <!-- Submit Button -->
@@ -174,5 +179,7 @@
         </form>
     </div>
 
-</body>
-</html>
+    </body>
+
+    </html>
+@endsection
