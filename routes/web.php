@@ -16,6 +16,20 @@ use App\Http\Controllers\AdminAuthController;
 */
 
 
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/admin/settings', [AdminController::class, 'showSettings'])->name('admin.settings');
+    Route::post('/admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
+});
+
+Route::middleware('auth')->get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
+    Route::post('admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
+
+});
+
 
 Route::prefix('admin')->group(function () {
     // Show login form
@@ -33,4 +47,13 @@ Route::prefix('admin')->group(function () {
         // Logout route
         Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
     });
+    // Route to show the change password and email form
+    Route::get('settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
+
+    // Route to handle the form submission
+    Route::post('settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
+
 });
+
+
+

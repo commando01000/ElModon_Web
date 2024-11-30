@@ -7,11 +7,16 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminAuthController extends Controller
 {
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect()->route('admin.settings');
+    }
     // Show the admin login form
     public function showLoginForm()
     {
         return view('Backend/Authentication/login'); // Ensure you have a 'login' view in the 'admin' folder
     }
+
 
     // Handle admin login
     public function login(Request $request)

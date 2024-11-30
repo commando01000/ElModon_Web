@@ -14,7 +14,11 @@ class Admin extends Authenticatable
         'email',
         'password',
     ];
-
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+    
     protected $hidden = [
         'password',
         'remember_token',
