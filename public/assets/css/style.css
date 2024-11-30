@@ -1,23 +1,30 @@
 body {
-    background: linear-gradient(to right, rgb(250, 249, 249) 30%,rgb(184, 195, 197)  70%);
-
+    background: linear-gradient(
+        to right,
+        rgb(250, 249, 249) 30%,
+        rgb(184, 195, 197) 70%
+    );
 }
 
 .navbar {
-    background: linear-gradient(to right, rgb(241, 235, 235) 5%,rgb(9, 118, 18)95%);
-    border-radius:20px!important;
-    margin-top:-14px !important;
-    border-style:outset;
+    background: linear-gradient(
+        to right,
+        rgb(241, 235, 235) 5%,
+        rgb(9, 118, 18) 95%
+    );
+    border-radius: 20px !important;
+    margin-top: -14px !important;
+    border-style: outset;
     border-width: 1px;
     box-shadow: 0 4px 8px rgb(137, 184, 142);
 }
-.na{
+.na {
     margin-right: 15px;
 }
-.nav-link{
+.nav-link {
     color: rgb(251, 251, 251) !important;
 }
-.navbar-brand{
+.navbar-brand {
     width: 140px !important;
     height: 70px !important;
     margin-left: 125px !important;
@@ -53,8 +60,13 @@ a:focus {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica Neue', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
     color: #222;
     margin-bottom: 0.5rem;
@@ -206,6 +218,12 @@ select {
 @media (max-width: 991.98px) {
     .sidebar {
         width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .navbar-nav {
+        justify-content: center !important;
+        align-items: center !important;
     }
 }
 .sidebar .active {
