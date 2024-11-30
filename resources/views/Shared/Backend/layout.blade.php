@@ -20,8 +20,8 @@
 <body>
     <!-- Main Navigation -->
     <header>
-        @include('Shared.Backend.nav')
-        @include('Shared.Backend.sidebar') <!-- Include Sidebar -->
+        @yield('Shared.Backend.nav')
+        @yield('Shared.Backend.sidebar') <!-- Include Sidebar -->
     </header>
 
     <!--Main layout-->

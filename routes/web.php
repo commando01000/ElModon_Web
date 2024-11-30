@@ -62,3 +62,6 @@ Route::prefix('admin')->group(function () {
 Route::get('/', function () {
     return view('Frontend.Home.Index');
 });
+Route::get('contact', function () {
+    return view('Frontend.Contact-us.index');
+});
