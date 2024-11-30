@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\AdminAuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,28 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Frontend.Home.index');
-});
-Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
-Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
-
-Route::middleware(['admin'])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return 'Welcome to Admin Dashboard';
-    })->name('admin.dashboard');
-});
 
 
+Route::prefix('admin')->group(function () {
+    // Show login form
+    Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
 
-Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
-Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+    // Handle login
+    Route::post('/login', [AdminAuthController::class, 'login']);
 
-// Protecting the admin dashboard route with the 'admin' middleware
-Route::middleware(['admin'])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard'); // This will be the dashboard viewasdasd asdasdasd
-    })->name('admin.dashboard');
+    // Protected routes (only accessible to logged-in admins)
+    Route::middleware('auth:admin')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('Backend/dashboard/index'); // Replace with your actual admin dashboard view
+        })->name('admin.dashboard');
+
+        // Logout route
+        Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+    });
 });

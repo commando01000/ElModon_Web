@@ -4,37 +4,42 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Admin;
 
 class AdminAuthController extends Controller
 {
+    // Show the admin login form
     public function showLoginForm()
     {
-        return view('Backend/dashboard/login'); // Adjust if your view name is different
+        return view('Backend/dashboard/login'); // Ensure you have a 'login' view in the 'admin' folder
     }
 
+    // Handle admin login
     public function login(Request $request)
     {
-        // Validate the incoming request data
+        // Validate the request
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:6',
+            'password' => 'required',
         ]);
 
-        // Attempt to authenticate the admin using the provided credentials
-        if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
+        // Attempt to log in using the 'admin' guard
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::guard('admin')->attempt($credentials)) {
+            // Redirect to admin dashboard
             return redirect()->route('admin.dashboard');
         }
 
-        // If authentication fails, return back with error message
+        // Return back with an error message
         return back()->withErrors([
-            'email' => 'Invalid credentials. Please check your email or password and try again.',
-        ])->withInput($request->only('email'));
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
 
+    // Logout the admin
     public function logout()
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.login'); // Redirect to the login page
     }
 }
