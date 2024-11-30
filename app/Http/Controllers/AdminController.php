@@ -16,24 +16,25 @@ class AdminController extends Controller
 
     public function showSettingsForm()
     {
-        $admin = Admin::find(1); // Replace 1 with an existing ID.
+        $admin = auth('admin')->user();// Replace 1 with an existing ID.
 
         Log::info($admin); // Log the user object
         // dd($admin);
         if (!$admin) {
             return redirect()->route('admin.login')->with('error', 'You must be logged in to access this page.');
         }
-    
+
         return view('Backend.Authentication.changepassword', compact('admin'));
     }
-    
+
     public function updateSettings(Request $request)
     {
-        $admin = Admin::find(1); // Get the logged-in admin
+        // Get the logged-in admin using the correct guard
+        $admin = auth('admin')->user();
 
         // Validate the form input
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users,email,' . $admin->id,
+            'email' => 'required|email|unique:admins,email,' . $admin->id, // Correct the table reference
             'current_password' => 'required',
             'new_password' => 'required|min:8|confirmed',
         ]);
@@ -60,4 +61,5 @@ class AdminController extends Controller
         return redirect()->route('admin.settings')
             ->with('success', 'Settings updated successfully');
     }
+
 }
