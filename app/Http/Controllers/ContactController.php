@@ -16,4 +16,21 @@ class ContactController extends Controller
 
         return view('Frontend.Contact-us.index');
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'full_name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $message = $request->input('message');
+
+        // You can also store the contact information in a database
+
+        return redirect()->back()->with('success', 'Your message has been sent successfully.');
+    }
 }
