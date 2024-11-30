@@ -129,9 +129,36 @@
 
         }
 
+
+        .sendm:hover {
+            background-color: rgb(89, 173, 89);
+            width: 130px;
+            overflow: hidden;
+        }
+
+        .viewteam:hover {
+            background-color: rgb(89, 173, 89);
+            overflow: hidden;
+        }
+
+        p4 {
+            font-size: 20px;
+            font-style: italic;
+
+        }
+
         @media (max-width:991.5px) {
             .top {
-                width: 85% !important;
+                width: 100% !important;
+            }
+
+            .mrow{
+                width: 100% !important;
+            }
+            .p2,
+            .p1,
+            .p3 {
+                font-size: 20px !important;
             }
         }
 
@@ -183,72 +210,13 @@
             background-color: rgb(89, 173, 89);
             overflow: hidden;
         }
-        p4{
+
+        p4 {
             font-size: 20px;
             font-style: italic;
 
-        }
-
-        @media (max-width:991.5px) {
-            .top {
-                width: 85% !important;
-            }
-        }
-
-        .sendm {
-            background: rgb(30, 161, 30);
-            color: white;
-            height: 30px;
-            font-size: small;
-            position: fixed;
-            bottom: 20%;
-            right: 1px;
-            border-radius: 10px;
-            padding: 10px 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: width 0.3s, background-color 0.3s;
-            overflow: hidden;
-            white-space: nowrap;
-            width: 45px;
-            margin-right: -14px;
-
 
         }
-
-        .viewteam {
-            background: rgb(30, 161, 30);
-            color: white;
-            display: center;
-            height: 50px;
-            border-radius: 15px;
-            transition: width 0.3s, background-color 0.3s;
-            width: 175px;
-            box-shadow: 0 4px 6px rgb(66, 175, 75);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            margin: 0 auto;
-        }
-
-
-        .sendm:hover {
-            background-color: rgb(89, 173, 89);
-            width: 130px;
-            overflow: hidden;
-        }
-
-        .viewteam:hover {
-            background-color: rgb(89, 173, 89);
-            overflow: hidden;
-        }
-        p4{
-            font-size: 20px;
-            font-style: italic;
-
-        }
-
     </style>
 @endsection
 
@@ -267,7 +235,7 @@
             Fundation
         </p3>
     </div>
-    <div class="row w-75 m-auto overflow-hidden">
+    <div class="mrow row w-75 m-auto overflow-hidden">
         <div class="col-md-12">
 
             @include('Frontend.Projects-Swiper.swiper')

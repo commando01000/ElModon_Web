@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EngineersController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
@@ -61,12 +65,11 @@ Route::prefix('admin')->group(function () {
     Route::post('settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
 });
 
-Route::get('/', function () {
-    return view('Frontend.Home.Index');
-});
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
-
+Route::get('about-us', [AboutController::class, 'index'])->name('about-us');
+Route::get('engineers', [EngineersController::class, 'index'])->name('engineers');
+Route::get('projects', [ProjectsController::class, 'index'])->name('projects');
 // Lang routes
 Route::get('/lang/{locale}', function ($locale) {
     App::setLocale($locale);
