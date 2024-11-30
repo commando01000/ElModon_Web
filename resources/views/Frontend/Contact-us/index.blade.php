@@ -115,7 +115,6 @@
     </style>
 @endsection
 
-
 @section('content')
     <div class="contact-form p-5 m-5">
         <h2>Contact Us</h2>
