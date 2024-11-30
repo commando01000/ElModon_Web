@@ -127,6 +127,12 @@
             border-radius: 10px;
 
         }
+
+        @media (max-width: 600px) {
+            .top {
+                width: 100% !important;
+            }
+        }
     </style>
 @endsection
 
@@ -141,7 +147,7 @@
                 MODON
             </p2>
         </div>
-        <p3 class ='m-auto overflow-hidden text-center animate__animated animate__backInRight '>
+        <p3 class ='m-auto overflow-hidden text-center animate__animated animate__backInRight'>
             Fundation
         </p3>
     </div>
