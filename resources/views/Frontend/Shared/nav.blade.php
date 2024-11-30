@@ -7,17 +7,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-5 ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/home">Home</a>
+                <li class=" nav-item na ">
+                    <a class="nav-link fa fa-home" aria-current="page" href="/home">  Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/projects">Projects</a>
+                <li class="nav-item na">
+                    <a class="nav-link fa fa-bars" href="/projects">  Projects</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about-us">About Us</a>
+                <li class="nav-item na">
+                    <a class="nav-link fa fa-users" href="/Engineers">  Engineers</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact-us">Contact Us</a>
+                <li class="nav-item na">
+                    <a class="nav-link fa fa-book" href="/about-us">  About Us</a>
+                </li>
+                <li class="nav-item na">
+                    <a class="nav-link fa fa-phone" href="/contact-us">  Contact Us</a>
                 </li>
             </ul>
         </div>

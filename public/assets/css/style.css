@@ -1,22 +1,26 @@
 body {
-    background: linear-gradient(to right, rgb(250, 249, 249) 30%,rgb(194, 209, 212)  70%);
+    background: linear-gradient(to right, rgb(250, 249, 249) 30%,rgb(184, 195, 197)  70%);
 
 }
 
 .navbar {
-    background: linear-gradient(to right, rgb(234, 230, 227) 30%,  rgb(120, 137, 140) 70%)!important;
+    background: linear-gradient(to right, rgb(241, 235, 235) 5%,rgb(9, 118, 18)95%);
     border-radius:20px!important;
     margin-top:-14px !important;
     border-style:outset;
     border-width: 1px;
+    box-shadow: 0 4px 8px rgb(137, 184, 142);
+}
+.na{
+    margin-right: 15px;
 }
 .nav-link{
     color: rgb(251, 251, 251) !important;
 }
 .navbar-brand{
-    width: 120px !important;
+    width: 140px !important;
     height: 70px !important;
-    margin-left: 110px !important;
+    margin-left: 125px !important;
 }
 /* Reset default browser styles */
 *,
