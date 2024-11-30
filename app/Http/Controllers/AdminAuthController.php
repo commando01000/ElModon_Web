@@ -10,7 +10,7 @@ class AdminAuthController extends Controller
     // Show the admin login form
     public function showLoginForm()
     {
-        return view('Backend/dashboard/login'); // Ensure you have a 'login' view in the 'admin' folder
+        return view('Backend/Authentication/login'); // Ensure you have a 'login' view in the 'admin' folder
     }
 
     // Handle admin login
