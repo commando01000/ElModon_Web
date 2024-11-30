@@ -24,14 +24,18 @@ Route::middleware(['auth:admin'])->group(function () {
 Route::middleware('auth')->get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
-    Route::post('admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
+// Route::middleware('auth')->group(function () {
+//     Route::get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
+//     Route::post('admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
 
-});
+// });
 
 
 Route::prefix('admin')->group(function () {
+
+    Route::get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
+    Route::post('admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
+
     // Show login form
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
 
