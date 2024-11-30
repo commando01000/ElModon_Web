@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
+
 class AdminController extends Controller
 {
     // Show the settings form
@@ -15,9 +16,8 @@ class AdminController extends Controller
 
     public function showSettingsForm()
     {
-        $admin = auth('admin')->user(); // Replace 1 with an existing ID.
+        $admin = auth()->user()->is_admin; // Replace 1 with an existing ID.
 
-        Log::info($admin); // Log the user object
         // dd($admin);
         if (!$admin) {
             return redirect()->route('admin.login')->with('error', 'You must be logged in to access this page.');
@@ -29,12 +29,12 @@ class AdminController extends Controller
     public function updateSettings(Request $request)
     {
         // Get the logged-in admin using the correct guard
-        $admin = auth()->user()->is_admin;
-        dd($admin);
+        $admin = auth()->user();
+
 
         // Validate the form input
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:admins,email,' . $admin->id, // Correct the table reference
+            'email' => 'required|email|unique:users,email,' . $admin->id, // Correct the table reference
             'current_password' => 'required',
             'new_password' => 'required|min:8|confirmed',
         ]);
