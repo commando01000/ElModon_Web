@@ -7,12 +7,19 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 class AdminController extends Controller
 {
     // Show the settings form
     // Handle the settings form submission
-
+    public function index(){
+        $locale = Session::get('locale');
+        App::setLocale($locale);
+        Session::put('locale', $locale);
+        return view('Backend.dashboard.index'); // Corrected path
+    }
+    
 
     public function showSettingsForm()
     {
@@ -22,6 +29,9 @@ class AdminController extends Controller
         if (!$admin) {
             return redirect()->route('admin.login')->with('error', 'You must be logged in to access this page.');
         }
+        $locale = Session::get('locale');
+        App::setLocale($locale);
+        Session::put('locale', $locale);
 
         return view('Backend.Authentication.changepassword', compact('admin'));
     }
@@ -41,6 +51,10 @@ class AdminController extends Controller
 
         // If validation fails, return with errors
         if ($validator->fails()) {
+            $locale = Session::get('locale');
+            App::setLocale($locale);
+            Session::put('locale', $locale);
+            
             return redirect()->route('admin.dashboard')
                 ->withErrors($validator)
                 ->withInput();

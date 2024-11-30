@@ -1,4 +1,4 @@
-@extends('Shared.Backend.layout')
+@extends('Backend.Shared.layout')
 
 @section('content')
     <div class="container">

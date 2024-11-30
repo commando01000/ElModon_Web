@@ -239,3 +239,31 @@ select {
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
+
+/* RTL and LTR */
+
+/* RTL Specific Styles */
+[dir="rtl"] {
+    /* Text alignment */
+    text-align: right;
+
+    /* Right to left text flow */
+    direction: rtl;
+
+    /* Adjust margins/paddings if necessary */
+    /* Example: */
+    .navbar, .footer {
+        text-align: right;
+    }
+}
+
+/* LTR Specific Styles */
+[dir="ltr"] {
+    /* LTR Text Alignment */
+    text-align: left;
+
+    /* Left to right text flow */
+    direction: ltr;
+}
+
+/* End RTL and LTR */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ $direction ?? 'ltr' }}">
 
 <head>
     <meta charset="UTF-8">
@@ -20,8 +20,8 @@
 <body>
     <!-- Main Navigation -->
     <header>
-        @yield('Shared.Backend.nav')
-        @yield('Shared.Backend.sidebar') <!-- Include Sidebar -->
+        @include('Backend.Shared.sidebar') <!-- Include Sidebar -->
+        @include('Backend.Shared.nav') <!-- Include Navbar -->
     </header>
 
     <!--Main layout-->
@@ -35,3 +35,4 @@
 </body>
 
 </html>
+

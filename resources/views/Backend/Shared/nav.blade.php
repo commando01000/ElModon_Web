@@ -14,7 +14,7 @@
                 <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt=""
                     loading="lazy" />
             </a>
-            
+
 
             <!-- Right links -->
             <ul class="navbar-nav ms-auto d-flex flex-row">
@@ -25,18 +25,14 @@
                         <i class="fas fa-bell"></i>
                         <span class="badge rounded-pill badge-notification bg-danger">1</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Some news</a></li>
-                        <li><a class="dropdown-item" href="#">Another news</a></li>
-                        <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </li>
-                    </ul>
                 </li>
-
-                
-               
-
+                <li class="nav-item na">
+                    <a class="nav-link" href="{{ route('lang', ['locale' => 'en']) }}">
+                        <span>en</span></a>
+                    <a class="nav-link" href="{{ route('lang', ['locale' => 'ar']) }}">
+                        <span>ar</span>
+                    </a>
+                </li>
                 <!-- Icon dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"

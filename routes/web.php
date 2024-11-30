@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminAuthController;
@@ -18,15 +19,14 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
+use App\Http\Controllers\LanguageController;
+Route::get('/lang/{locale}', [LanguageController::class, 'switchLocale'])->name('lang.switch');
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/settings', [AdminController::class, 'showSettings'])->name('admin.settings');
     Route::post('/admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
 });
-
 Route::middleware('auth')->get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
-
-
 // Route::middleware('auth')->group(function () {
 //     Route::get('admin/settings', [AdminController::class, 'showSettingsForm'])->name('admin.settings');
 //     Route::post('admin/settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
@@ -47,9 +47,7 @@ Route::prefix('admin')->group(function () {
 
     // Protected routes (only accessible to logged-in admins)
     Route::middleware('admin')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('Backend.dashboard.index'); // Corrected path
-        })->name('admin.dashboard');
+        Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
         // Logout route
         Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
@@ -61,15 +59,11 @@ Route::prefix('admin')->group(function () {
     Route::post('settings', [AdminController::class, 'updateSettings'])->name('admin.update.settings');
 });
 
-Route::get('/', function () {
-    return view('Frontend.Home.Index');
+
+
+Route::prefix('/')->group(function () {
+    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
+    // Lang routes
+    Route::get('/lang/{locale}', [LanguageController::class, 'switchLocale'])->name('lang');
 });
-
-Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
-
-// Lang routes
-Route::get('/lang/{locale}', function ($locale) {
-    App::setLocale($locale);
-    Session::put('locale', $locale);
-    return redirect()->back();
-})->name('lang');

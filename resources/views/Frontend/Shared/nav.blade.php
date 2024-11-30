@@ -8,19 +8,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-5 ms-auto">
                 <li class=" nav-item na ">
-                    <a class="nav-link fa fa-home" aria-current="page" href="/home"> Home</a>
+                    <a class="nav-link fa fa-home" aria-current="page" href="/home">@lang('translation.home')</a>
                 </li>
                 <li class="nav-item na">
-                    <a class="nav-link fa fa-bars" href="/projects"> Projects</a>
+                    <a class="nav-link fa fa-bars" href="/projects">@lang('translation.projects')</a>
                 </li>
                 <li class="nav-item na">
-                    <a class="nav-link fa fa-users" href="/Engineers"> Engineers</a>
+                    <a class="nav-link fa fa-users" href="/Engineers"></a>
                 </li>
                 <li class="nav-item na">
-                    <a class="nav-link fa fa-book" href="/about-us"> About Us</a>
+                    <a class="nav-link fa fa-book" href="/about-us">@lang('translation.about')</a>
                 </li>
                 <li class="nav-item na">
-                    <a class="nav-link fa fa-phone" href="/contact-us"> Contact Us</a>
+                    <a class="nav-link fa fa-phone" href="/contact-us">@lang('translation.Contact-Us')</a>
                 </li>
                 <li class="nav-item na">
                     <a class="nav-link" href="{{ route('lang', ['locale' => 'en']) }}">

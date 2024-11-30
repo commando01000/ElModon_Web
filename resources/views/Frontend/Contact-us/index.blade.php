@@ -117,20 +117,20 @@
 
 @section('content')
     <div class="contact-form p-5 m-5">
-        <h2>Contact Us</h2>
+        <h2>@lang('translation.Contact-Us')</h2>
         <form action="/send-message" method="POST">
             <!-- Full Name and Phone Number -->
             <div class="form-row">
                 <div class="form-column">
                     <div class="form-group">
                         <input type="text" id="full_name" name="full_name" placeholder=" " required>
-                        <span>Full Name <span class="required"></span></span>
+                        <span>@lang('translation.Full-Name') <span class="required"></span></span>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-group">
                         <input type="tel" id="phone" name="phone" placeholder=" " required>
-                        <span>Phone Number <span class="required"></span></span>
+                        <span>@lang('translation.Phone-Number') <span class="required"></span></span>
                     </div>
                 </div>
             </div>
@@ -140,13 +140,13 @@
                 <div class="form-column">
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder=" " required>
-                        <span>Email <span class="required"></span></span>
+                        <span>@lang('translation.Email') <span class="required"></span></span>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-group">
                         <input type="text" id="subject" name="subject" placeholder=" " required>
-                        <span>Subject <span class="required"></span></span>
+                        <span>@lang('translation.Subject') <span class="required"></span></span>
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@
             <!-- Message -->
             <div class="form-group">
                 <textarea id="message" name="message" placeholder=" " required></textarea>
-                <span>Message <span class="required"></span></span>
+                <span>@lang('translation.Message') <span class="required"></span></span>
             </div>
 
             <!-- Submit Button -->

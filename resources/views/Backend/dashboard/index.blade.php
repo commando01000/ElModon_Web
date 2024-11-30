@@ -1,1 +1,1 @@
-@include('Shared.Backend.layout') 
+@extends('Backend.Shared.layout')
