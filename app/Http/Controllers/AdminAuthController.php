@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 /**
  * Handles admin authentication.
  */
@@ -30,6 +31,9 @@ class AdminAuthController extends Controller
      */
     public function showLoginForm()
     {
+        $locale = Session::get('locale');
+        App::setLocale($locale);
+        Session::put('locale', $locale);
         return view('Backend/Authentication/login'); // Ensure you have a 'login' view in the 'admin' folder
     }
 
@@ -84,6 +88,9 @@ class AdminAuthController extends Controller
     public function logout()
     {
         Auth::logout();
+        $locale = Session::get('locale');
+        App::setLocale($locale);
+        Session::put('locale', $locale);
         return redirect()->route('admin.login'); // Redirect to the login page
     }
 }
