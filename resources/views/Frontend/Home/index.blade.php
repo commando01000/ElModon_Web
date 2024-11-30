@@ -132,7 +132,7 @@
 
 @section('content')
     <br>
-    <div class ='top  m-auto overflow-hidden text-center '>
+    <div class ='top m-auto overflow-hidden text-center'>
         <div class="ad animate__animated animate__backInLeft m-auto overflow-hidden">
             <p1 class=" m-auto overflow-hidden">
                 EL
@@ -150,33 +150,27 @@
 
             @include('Frontend.Projects-Swiper.swiper')
 
-        </div>
-        <div class ='animate__animated animate__backInLeft'>
-            <br>
-            <div class="container">
-                <br>
-                <h5 class ='m-auto overflow-hidden fa fa-users'>
-                    MEET OUR TEAM
-                    <hr class="line-horizontal">
-                </h5>
-                <div class="row  m-auto overflow-hidden">
-                    <div class="im col-md-4 col-6 mb-4">
+            <div class ='animate__animated animate__backInLeft'>
+                <div class="row mt-4 pt-4">
+                    <h5 class ='m-auto overflow-hidden fa fa-users'>
+                        MEET OUR TEAM
+                        <hr class="line-horizontal">
+                    </h5>
+                    <div class="im col-md-4 mb-4">
                         <img src="{{ asset('assets/images/demo1.png') }}" alt="d1" class="img-fluid">
                         <p>d1</p>
                     </div>
-                    <div class="im col-md-4 col-6 mb-4">
+                    <div class="im col-md-4 mb-4">
                         <img src="{{ asset('assets/images/demo2.png') }}" alt="d2" class="img-fluid">
                         <p>d2</p>
                     </div>
-                    <div class="im col-md-4 col-6 mb-4">
+                    <div class="im col-md-4 mb-4">
                         <img src="{{ asset('assets/images/demo3.png') }}" alt="d3" class="img-fluid">
                         <p>d3</p>
                     </div>
                 </div>
             </div>
-
         </div>
-
 
     @endsection
 
