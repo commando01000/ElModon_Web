@@ -46,12 +46,6 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-
-        // Add the admin guard
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins',
-        ],
     ],
 
     /*

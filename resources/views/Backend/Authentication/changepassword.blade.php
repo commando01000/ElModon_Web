@@ -17,7 +17,7 @@
                 <input type="email" class="form-control" id="email" name="email"
                     value="{{ old('email', auth('admin')->user()->email ?? '') }}">
                 @error('email')
-                    <div class="text-danger">{{ $message }}</div>
+                    <div class="text-danger">{{ message }}</div>
                 @enderror
             </div>
 
@@ -25,7 +25,7 @@
                 <label for="current_password">Current Password</label>
                 <input type="password" class="form-control" id="current_password" name="current_password">
                 @error('current_password')
-                    <div class="text-danger">{{ $message }}</div>
+                    <div class="text-danger">{{ message }}</div>
                 @enderror
             </div>
 
@@ -33,7 +33,7 @@
                 <label for="new_password">New Password</label>
                 <input type="password" class="form-control" id="new_password" name="new_password">
                 @error('new_password')
-                    <div class="text-danger">{{ $message }}</div>
+                    <div class="text-danger">{{ message }}</div>
                 @enderror
             </div>
 

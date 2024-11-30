@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
-use App\Models\Admin;
 class AdminController extends Controller
 {
     // Show the settings form
@@ -16,7 +15,7 @@ class AdminController extends Controller
 
     public function showSettingsForm()
     {
-        $admin = auth('admin')->user();// Replace 1 with an existing ID.
+        $admin = auth('admin')->user(); // Replace 1 with an existing ID.
 
         Log::info($admin); // Log the user object
         // dd($admin);
@@ -30,7 +29,8 @@ class AdminController extends Controller
     public function updateSettings(Request $request)
     {
         // Get the logged-in admin using the correct guard
-        $admin = auth('admin')->user();
+        $admin = auth()->user()->is_admin;
+        dd($admin);
 
         // Validate the form input
         $validator = Validator::make($request->all(), [
@@ -61,5 +61,4 @@ class AdminController extends Controller
         return redirect()->route('admin.settings')
             ->with('success', 'Settings updated successfully');
     }
-
 }

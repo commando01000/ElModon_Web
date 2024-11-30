@@ -39,9 +39,9 @@ Route::prefix('admin')->group(function () {
     Route::post('/login', [AdminAuthController::class, 'login']);
 
     // Protected routes (only accessible to logged-in admins)
-    Route::middleware('auth:admin')->group(function () {
+    Route::middleware('admin')->group(function () {
         Route::get('/dashboard', function () {
-            return view('Backend/dashboard/index'); // Replace with your actual admin dashboard view
+            return view('Backend.dashboard.index'); // Corrected path
         })->name('admin.dashboard');
 
         // Logout route
@@ -55,5 +55,6 @@ Route::prefix('admin')->group(function () {
 
 });
 
-
-
+Route::get('/', function () {
+    return view('Frontend.Home.Index');
+});
