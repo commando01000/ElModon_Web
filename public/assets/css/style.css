@@ -1,4 +1,182 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+    background: linear-gradient(to right, rgb(250, 249, 249) 30%,rgb(194, 209, 212)  70%);
+}
 
+.navbar {
+    background: linear-gradient(to right, rgb(234, 230, 227) 30%,  rgb(120, 137, 140) 70%)!important;
+    border-radius:20px!important;
+    margin-top:-14px !important;
+    border-style:outset;
+    border-width: 1px;
+}
+.nav-link{
+    color: rgb(251, 251, 251) !important;
+}
+.navbar-brand{
+    width: 120px !important;
+    height: 70px !important;
+    margin-left: 110px !important;
+}
+/* Reset default browser styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+    font-family: "Lora";
+    font-optical-sizing: auto;
+    font-size: medium;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* Link styles */
+a {
+    color: #3490dc;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+    color: #1d72b8;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Container for general layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Flexbox utility classes */
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+/* Grid System */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col {
+    padding: 0 15px;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+/* Basic buttons */
+button,
+input[type="submit"],
+a.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #3490dc;
+    color: #fff;
+    text-decoration: none;
+}
+
+button:hover,
+input[type="submit"]:hover,
+a.btn:hover {
+    background-color: #1d72b8;
+}
+
+/* Form input styles */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.pt-1 {
+    padding-top: 1rem;
+}
+
+.pb-1 {
+    padding-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        padding: 0 10px;
+    }
+}
