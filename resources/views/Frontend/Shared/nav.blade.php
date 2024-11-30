@@ -22,6 +22,13 @@
                 <li class="nav-item na">
                     <a class="nav-link fa fa-phone" href="/contact-us"> Contact Us</a>
                 </li>
+                <li class="nav-item na">
+                    <a class="nav-link" href="{{ route('lang', ['locale' => 'en']) }}">
+                        <span>en</span></a>
+                    <a class="nav-link" href="{{ route('lang', ['locale' => 'ar']) }}">
+                        <span>ar</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

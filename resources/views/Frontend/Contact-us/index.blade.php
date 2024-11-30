@@ -1,20 +1,7 @@
 @extends('Frontend.Shared.layout')
-@section('title', 'send message')
+@section('title', 'Contact Us')
 @section('css')
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            /* Dark background */
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
         .contact-form {
             max-width: 700px;
             width: 100%;
@@ -129,9 +116,8 @@
 @endsection
 
 
-
 @section('content')
-    <div class="contact-form">
+    <div class="contact-form p-5 m-5">
         <h2>Contact Us</h2>
         <form action="/send-message" method="POST">
             <!-- Full Name and Phone Number -->
@@ -174,12 +160,8 @@
 
             <!-- Submit Button -->
             <div class="send-button">
-                <button type="submit">Send Message →</button>
+                <button type="submit">@lang('translation.Send-Message')</button>
             </div>
         </form>
     </div>
-
-    </body>
-
-    </html>
 @endsection
