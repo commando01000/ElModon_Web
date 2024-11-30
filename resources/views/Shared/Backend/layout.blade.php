@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.umd.min.js"></script>
 
-    
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     {{-- <script src="{{ asset('js/mdb.min.js') }}"></script> --}}
     <title>@yield('title', 'Admin Dashboard')</title>
@@ -24,10 +24,10 @@
         @include('Shared.Backend.sidebar') <!-- Include Sidebar -->
     </header>
 
-    <!-- Main Layout -->
-    <main style="margin-top: 58px;">
+    <!--Main layout-->
+    <main style="margin-top: 58px">
         <div class="container pt-4">
-            @yield('content') <!-- The content from child views will be injected here -->
+            @yield('content')
         </div>
     </main>
 
