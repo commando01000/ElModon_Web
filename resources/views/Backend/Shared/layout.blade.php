@@ -21,7 +21,7 @@
     <!-- Main Navigation -->
     <header>
         @include('Backend.Shared.sidebar') <!-- Include Sidebar -->
-        @include('Backend.Shared.nav') <!-- Include Navbar -->
+        {{-- @include('Backend.Shared.nav') <!-- Include Navbar --> --}}
     </header>
 
     <!--Main layout-->

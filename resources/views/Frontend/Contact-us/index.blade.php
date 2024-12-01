@@ -120,6 +120,7 @@
     <div class="contact-form p-5 m-5">
         <h2>@lang('translation.Contact-Us')</h2>
         <form action="/send-message" method="POST">
+            @csrf
             <!-- Full Name and Phone Number -->
             <div class="form-row">
                 <div class="form-column">

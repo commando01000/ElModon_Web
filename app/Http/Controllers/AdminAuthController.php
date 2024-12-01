@@ -50,14 +50,12 @@ class AdminAuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
+        
         // get the user 
         $user = User::where('email', $request->email)->first();
-
-        // Attempt to log in using the 'admin' guard
-
+        
         // Attempt login using the default 'web' guard
-        if (Auth::attempt($request->only('email', 'password'))) {
+        if (Auth::attempt($request->only('email', 'password'), true)) {
             // Check if the authenticated user is an admin
             if (Auth::user()->is_admin) {
                 $request->session()->regenerate();

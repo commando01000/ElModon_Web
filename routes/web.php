@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
+
+
 use App\Http\Controllers\LanguageController;
 Route::get('/lang/{locale}', [LanguageController::class, 'switchLocale'])->name('lang.switch');
 
@@ -63,7 +65,14 @@ Route::prefix('admin')->group(function () {
 
 Route::prefix('/')->group(function () {
     Route::get('/home', [HomeController::class, 'index']);
+    
+
+    // Show the contact form
     Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
+    // Handle form submission
+    Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
+
+
     // Lang routes
     Route::get('/lang/{locale}', [LanguageController::class, 'switchLocale'])->name('lang');
 });
