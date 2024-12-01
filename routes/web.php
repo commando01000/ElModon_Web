@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EngineersController;
+use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 

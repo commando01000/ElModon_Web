@@ -6,18 +6,27 @@
             max-width: 700px;
             width: 100%;
             padding: 20px;
-            background-color: #1f1f1f;
-            /* Slightly lighter background */
+            background: linear-gradient(to right,
+                    rgb(250, 249, 249) 10%,
+                    rgb(144, 155, 156) 90%);
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin: auto;
+            font-weight: bold;
         }
+
+
 
         .contact-form h2 {
             text-align: center;
             margin-bottom: 20px;
-            font-size: 1.5em;
-            color: #f5f5f5;
+            font-size: 2.5em;
+            color: rgb(37, 36, 36);
+            background-color: rgb(130, 193, 135);
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+
         }
+
 
         .form-row {
             display: flex;
@@ -52,7 +61,7 @@
 
         .form-group input:focus,
         .form-group textarea:focus {
-            border-color: #ff5722;
+            border-color: #656512;
             /* Highlight color */
         }
 
@@ -66,7 +75,7 @@
             top: 50%;
             left: 10px;
             transform: translateY(-50%);
-            color: #ff5722;
+            color: #252524;
             pointer-events: none;
             transition: all 0.3s ease;
             font-size: 0.9em;
@@ -74,20 +83,20 @@
 
         .form-group input:focus+span,
         .form-group textarea:focus+span {
-            top: -15px;
+            top: -10px;
             font-size: 0.8em;
-            color: #ff5722;
+            color: black;
         }
 
         .form-group input:not(:placeholder-shown)+span,
         .form-group textarea:not(:placeholder-shown)+span {
             top: -15px;
             font-size: 0.8em;
-            color: #ff5722;
+            color: black;
         }
 
         .form-group .required {
-            color: #ff5722;
+            color: black;
             margin-left: 5px;
         }
 
@@ -97,27 +106,34 @@
         }
 
         .send-button button {
-            background-color: #ff5722;
-            color: #fff;
+            color: rgb(37, 36, 36);
             padding: 12px 25px;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
             text-transform: uppercase;
+            background-color: rgb(102, 162, 107);
+            text-transform: uppercase;
+            font-size: 1.2em;
+            font-weight: bold;
             letter-spacing: 0.05em;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease, clip-path 0.3s ease;
+            outline: none;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
         }
 
         .send-button button:hover {
-            background-color: #e64a19;
+            background-color: rgb(134, 181, 138);
         }
     </style>
 @endsection
 
 @section('content')
-    <div class="contact-form p-5 m-5">
-        <h2>@lang('translation.Contact-Us')</h2>
+
+    <div class="mb-5 contact-form p-5 mt-5 m-auto overflow-hidden text-center justify-content-center align-items-center">
+        <h2 class="animate__animated animate__backInLeft">@lang('translation.Contact-Us')</h2>
         <form action="/send-message" method="POST">
             <!-- Full Name and Phone Number -->
             <div class="form-row">
@@ -158,9 +174,11 @@
             </div>
 
             <!-- Submit Button -->
-            <div class="send-button">
+            <div class=" send-button animate__animated animate__backInRight">
                 <button type="submit">@lang('translation.Send-Message')</button>
+
             </div>
         </form>
     </div>
+
 @endsection

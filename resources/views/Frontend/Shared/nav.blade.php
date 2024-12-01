@@ -8,28 +8,43 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-5 ms-auto">
                 <li class=" nav-item na ">
-                    <a class="nav-link fa fa-home" aria-current="page" href="/home">@lang('translation.home')</a>
+                    <a class="nav-link fa fa-home  {{Route::is('home') ? 'active' : ''}}" aria-current="page" href="{{ route('home') }}"> Home</a>
                 </li>
                 <li class="nav-item na">
-                    <a class="nav-link fa fa-bars" href="/projects">@lang('translation.projects')</a>
+                    <a class="nav-link fa fa-bars {{Route::is('projects') ? 'active' : ''}}" href="{{ route('projects') }}"> Projects</a>
                 </li>
                 <li class="nav-item na">
-                    <a class="nav-link fa fa-users" href="/Engineers"></a>
+                    <a class="nav-link fa fa-users {{Route::is('engineers') ? 'active' : ''}}" href="{{ route('engineers') }}"> Engineers</a>
                 </li>
                 <li class="nav-item na">
-                    <a class="nav-link fa fa-book" href="/about-us">@lang('translation.about')</a>
+                    <a class="nav-link fa fa-book {{Route::is('about-us') ? 'active' : ''}}" href="{{ route('about-us') }}"> About Us</a>
                 </li>
                 <li class="nav-item na">
-                    <a class="nav-link fa fa-phone" href="/contact-us">@lang('translation.Contact-Us')</a>
+                    <a class="nav-link fa fa-phone {{Route::is('contact-us') ? 'active' : ''}}" href="{{ route('contact-us') }}"> Contact Us</a>
                 </li>
-                <li class="nav-item na">
-                    <a class="nav-link" href="{{ route('lang', ['locale' => 'en']) }}">
-                        <span>en</span></a>
-                    <a class="nav-link" href="{{ route('lang', ['locale' => 'ar']) }}">
-                        <span>ar</span>
-                    </a>
-                </li>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Lagauge
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item na">
+                            <a class="nav-link" href="{{ route('lang', ['locale' => 'en']) }}">
+                                <span>English</span>
+                            </a>
+                        </li>
+                        <li class="nav-item na">
+                            <a class="nav-link" href="{{ route('lang', ['locale' => 'ar']) }}">
+                                <span>العربية</span>
+                            </a>
+                        </li>
+                    </ul>
+                  </div>
+
+
             </ul>
         </div>
     </div>
+
 </nav>
+
